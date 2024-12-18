@@ -6,7 +6,9 @@ from .views import (
     create_client,
     update_client,
     delete_client,
-    order_by_date, add_product, product_list,
+    order_by_date,
+    add_product,
+    product_list,
 )
 
 urlpatterns = [
@@ -18,6 +20,6 @@ urlpatterns = [
     path("order_by_date/", order_by_date, name="order_by_date-default"),
     path("order_by_date/<int:client_id>/", order_by_date, name="order_by_date"),
     path("add_product/", add_product, name="add_product"),
-    path('products/', product_list, name='product_list'),
-    path('__debug__/', include('debug_toolbar.urls')),
+    path("products/", product_list, name="product_list"),
+    # path('__debug__/', include('debug_toolbar.urls')),
 ]
